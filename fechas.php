@@ -4,8 +4,10 @@
 	if(!empty($_POST["fecha"])){
 		$fecha = $_POST["fecha"];
 		$fechaObj = new Fecha();
-		$resultado = $fechaObj->mostrarFecha($fecha);
-		echo $resultado;
+		$fecha = $fechaObj->mostrarFecha($fecha);
+		$dias = $fechaObj->diasDelMes;
+		echo $fecha;
+		echo "<br>El mes tiene ".$dias." días";
 	}else{
 		echo "Has mandado la fecha vacía";
 	}
